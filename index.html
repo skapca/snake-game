@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=zmijica_uputstvo.html">
-    <title>Redirecting...</title>
-</head>
-<body>
-    <h1>Redirecting...</h1>
-    <p>If you are not redirected, <a href="zmijica_uputstvo.html">click here</a>.</p>
-</body>
+
+    <head>
+        <title>Snake | Instructions</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="buttons.js" defer></script>
+    </head>
+
+    <body>
+        
+
+        <div class="podesavanja">
+
+            <div class="classic-flexy flex-item">
+                <span>Use arrows to move.</span>
+                <span>Collect food to grow bigger.</span>
+                <span>Collect super foods for +10 score.</span>
+                <span>Avoid crashing into walls and yourself.</span>
+                <span>Good luck!</span>
+            </div>
+
+            <div class="radio flex-item">
+                <input class="radio-input" type="radio" value="easy" name="nivoRadio" id="nivoRadio1">
+                <label class="radio-label" for="nivoRadio1">Easy</label>
+                <input class="radio-input" type="radio" value="medium" name="nivoRadio" id="nivoRadio2">
+                <label class="radio-label" for="nivoRadio2">Medium</label>
+                <input class="radio-input" type="radio" value="hard" name="nivoRadio" id="nivoRadio3" checked>
+                <label class="radio-label" for="nivoRadio3">Hard</label>
+            </div>
+            
+            <div class="radio flex-item">
+                <input class="radio-input" type="radio" value="10" name="velicinaRadio" id="velicinaRadio1">
+                <label class="radio-label" for="velicinaRadio1">10x10</label>
+                <input class="radio-input" type="radio" value="15" name="velicinaRadio" id="velicinaRadio2" checked>
+                <label class="radio-label" for="velicinaRadio2">15x15</label>
+                <input class="radio-input" type="radio" value="20" name="velicinaRadio" id="velicinaRadio3">
+                <label class="radio-label" for="velicinaRadio3">20x20</label>
+            </div>
+
+            <div class="classic-flexy flex-item">
+                <button class="nice-button" id="play-button" onclick="playHandler()">PLAY</button>
+                <button class="nice-button" id="results-button" onclick="resultsHandler()">VIEW RESULTS</button>
+            </div>
+
+        </div>
+
+    </body>
+
 </html>

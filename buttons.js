@@ -13,7 +13,7 @@ function playHandler() {
     const queryString = queryParams.toString();
     console.log(queryString);
 
-    const url = "zmijica_igra.html?" + queryString;
+    const url = "game.html?" + queryString;
     console.log(url);
 
     window.location.href = url;
@@ -21,10 +21,10 @@ function playHandler() {
 
 function resultsHandler() {
     localStorage.setItem('last', undefined);
-    window.location.href = "zmijica_rezultati.html";
+    window.location.href = "results.html";
 }
 
 function menuHandler() {
-    window.location.href = "zmijica_uputstvo.html";
+    window.location.href = "index.html";
 }
 
