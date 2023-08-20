@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Snake Game</title>
+        <link rel="stylesheet" href="stilovi.css">
+        <script src="igra.js" type="module"></script>
+        <script src="firebase.js" type="module"></script>
+        <script src="buttons.js" defer></script>
+    </head>
+
+    <body>
+        
+        <div id="kanvas">
+            <div class="game-text">
+                <div class="now-text">
+                    <span>Now:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="now-text">
+                    <span>Best:</span>
+                    <span id="best-score">0</span>
+                </div>
+            </div>
+            <div id="grid"></div>
+            <button class="nice-button" id="results-button" onclick="resultsHandler()" style="margin-top: 20px;">VIEW RESULTS</button>
+        </div>
+
+    </body>
+
+</html>

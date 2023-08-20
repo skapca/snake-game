@@ -1,2 +1,2 @@
-# snake-game
+# Snake game
 The famous retro snake game

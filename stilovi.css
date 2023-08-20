@@ -1,0 +1,144 @@
+
+/* Global */
+
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --snake-color: #2F8CD3;
+    --light-bg: #2E3F54;
+    --dark-bg: #2C3B4F;
+    --darker-bg: #1C2634;
+    --food-color: #DF4134;
+    --food-gold: #FFC90E;
+    --border-gray: #B1BBC7;
+    --button-light: #0f5b95;
+    --button-dark: #084879;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: white;
+}
+
+
+
+/* Game */
+
+.game-text {
+    color: white;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#kanvas {
+    display: grid;
+    place-items: center;
+}
+
+.now_text {
+    margin: 5px 15px;
+    padding: 5px 15px;
+}
+
+table {
+    border-collapse: collapse;
+    position: center;
+}
+
+td {
+    border: 1px solid var(--border-gray);
+    background-color: var(--dark-bg);
+    padding: 15px 15px;
+}
+
+.game-text {
+    display: flex;
+}
+
+.now-text {
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* Radio buttons */
+
+.radio {
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    margin: 20px;
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-label {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: var(--dark-bg);
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.radio-label:not(:last-of-type) {
+    border-right: 1px solid var(--border-gray);
+}
+
+.radio-input:checked + .radio-label {
+    background: var(--darker-bg);
+}
+
+.podesavanja {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* All */
+
+.classic-flexy {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item {
+    margin-top: 20px;
+}
+
+.nice-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-light);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+  
+.nice-button:hover {
+    background-color: var(--button-dark);
+}
+
+
