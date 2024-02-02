@@ -20,20 +20,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// console.log(app);
-
 const db = getFirestore(app);
 // const ref = database.ref('scores');
-
-const data = {
-    name: "proba1",
-    score: 24
-};
-// ref.push(data);
-
-// database.collection("scores").add(data);
-
-
 
 
 async function addEntry(name, score) {
@@ -46,8 +34,7 @@ async function addEntry(name, score) {
 
 }
 
-async function getTopFive() {
-
+async function getTopTen() {
 
     let ret = [];
     const query = await getDocs(collection(db, "scores"));
@@ -57,12 +44,6 @@ async function getTopFive() {
 
     return ret;
 
-    // stub
-    return {
-        'prvi': 100,
-        'drugi': 75,
-        'treci': 50,
-    }
 }
 
 async function getBestScore() {
@@ -75,8 +56,6 @@ async function getBestScore() {
 
     return ret;
 
-    // stub
-    return 100;
 }
 
-export {addEntry, getTopFive, getBestScore};
+export { addEntry, getTopTen, getBestScore };

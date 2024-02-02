@@ -1,12 +1,10 @@
 
-import {addEntry, getBestScore} from './firebase.js'
+import { addEntry } from './firebase.js'
 
 // settings
 let clock = 150;
 let n = 18;
 let N = n * n;
-const goldInterval = 10000;
-const goldTimeout = 3000;
 
 // DOM elements
 let score_ph;
@@ -128,8 +126,6 @@ function init() {
     grid_container.appendChild(table);
 
     const best = localStorage.getItem('best_score') ?? 0;
-    // const best = await getBestScore();
-    // const best = 0;
     best_score_ph.innerText = best;
 }
 
@@ -151,12 +147,6 @@ function start() {
     gold = -1;
 
     gameLoop = setInterval(update, clock);
-    // goldLoop = setInterval(function() {
-    //     gold = pickNewFood(food);
-    //     setTimeout(function() {
-    //         gold = -1;
-    //     }, goldTimeout);
-    // }, goldInterval);
 
 }
 
@@ -291,9 +281,4 @@ function finish() {
 
     start();
 
-}
-
-async function databaseCall(name, score) {
-    await addEntry(name, score);
-    return await getBestScore();
 }

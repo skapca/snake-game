@@ -1,31 +1,21 @@
 
-import { getTopFive } from "./firebase.js";
+import { getTopTen } from "./firebase.js";
 
 document.addEventListener("DOMContentLoaded", async function() {
     
     const polje = document.getElementsByClassName('vas-rezultat')[0];
     polje.style.display = 'none';
 
-    // const scores = JSON.parse(localStorage.getItem('scores'));
-    // const scores = await getTopFive();
-    // console.log(scores);
-
-    // if (scores === null) return;
-
     const tabela = document.getElementById('tabela');
 
-    // let sorted = [];
-    // for (let [k, v] of Object.entries(scores)) {
-    //     sorted.push([k, v]);
-    // }
-
-    let sorted = await getTopFive();
+    
+    let sorted = await getTopTen();
 
     sorted.sort((a, b) => b[1] - a[1]);
 
     let table = document.createElement("table");
 
-    for (let i = 0; i < Math.min(sorted.length, 5); i++) {
+    for (let i = 0; i < Math.min(sorted.length, 10); i++) {
         let row = document.createElement("tr");
 
         let pos = document.createElement("td");
