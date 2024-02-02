@@ -13,7 +13,7 @@ function playHandler() {
     const queryString = queryParams.toString();
     console.log(queryString);
 
-    const url = "game.html?" + queryString;
+    const url = "play?" + queryString;
     console.log(url);
 
     window.location.href = url;
@@ -21,10 +21,10 @@ function playHandler() {
 
 function resultsHandler() {
     localStorage.setItem('last', undefined);
-    window.location.href = "results.html";
+    window.location.href = "results";
 }
 
 function menuHandler() {
-    window.location.href = "index.html";
+    window.location.href = "/";
 }
 
