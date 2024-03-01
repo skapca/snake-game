@@ -39,44 +39,55 @@ document.addEventListener("DOMContentLoaded", function() {
     // gameLoop = setInterval(update, clock);
 });
 
+function handleControlLeft() {
+    if ((newDir.length === 0 && dir === RIGHT) || (newDir.length > 0 && newDir[newDir.length-1] === RIGHT)) return;
+    if (fresh) {
+        newDir = [];
+        fresh = false;
+    }
+    if (newDir.length < 2)
+        newDir.push(LEFT);
+}
+function handleControlRight() {
+    if ((newDir.length === 0 && dir === LEFT) || (newDir.length > 0 && newDir[newDir.length-1] === LEFT)) return;
+    if (fresh) {
+        newDir = [];
+        fresh = false;
+    }
+    if (newDir.length < 2)
+        newDir.push(RIGHT);
+}
+function handleControlUp() {
+    if ((newDir.length === 0 && dir === DOWN) || (newDir.length > 0 && newDir[newDir.length-1] === DOWN)) return;
+    if (fresh) {
+        newDir = [];
+        fresh = false;
+    }
+    if (newDir.length < 2)
+        newDir.push(UP);
+}
+function handleControlDown() {
+    if ((newDir.length === 0 && dir === UP) || (newDir.length > 0 && newDir[newDir.length-1] === UP)) return;
+    if (fresh) {
+        newDir = [];
+        fresh = false;
+    }
+    if (newDir.length < 2)
+        newDir.push(DOWN);
+}
+
 document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowLeft") {
-        if ((newDir.length === 0 && dir === RIGHT) || (newDir.length > 0 && newDir[newDir.length-1] === RIGHT)) return;
-        if (fresh) {
-            newDir = [];
-            fresh = false;
-        }
-        if (newDir.length < 2)
-            newDir.push(LEFT);
-    }
-    if (event.key === "ArrowRight") {
-        if ((newDir.length === 0 && dir === LEFT) || (newDir.length > 0 && newDir[newDir.length-1] === LEFT)) return;
-        if (fresh) {
-            newDir = [];
-            fresh = false;
-        }
-        if (newDir.length < 2)
-            newDir.push(RIGHT);
-    }
-    if (event.key === "ArrowUp") {
-        if ((newDir.length === 0 && dir === DOWN) || (newDir.length > 0 && newDir[newDir.length-1] === DOWN)) return;
-        if (fresh) {
-            newDir = [];
-            fresh = false;
-        }
-        if (newDir.length < 2)
-            newDir.push(UP);
-    }
-    if (event.key === "ArrowDown") {
-        if ((newDir.length === 0 && dir === UP) || (newDir.length > 0 && newDir[newDir.length-1] === UP)) return;
-        if (fresh) {
-            newDir = [];
-            fresh = false;
-        }
-        if (newDir.length < 2)
-            newDir.push(DOWN);
-    }
+    if (event.key === "ArrowLeft") handleControlLeft();
+    if (event.key === "ArrowRight") handleControlRight();
+    if (event.key === "ArrowUp") handleControlUp();
+    if (event.key === "ArrowDown") handleControlDown();
 });
+
+document.getElementById("controls-left").addEventListener("click", () => handleControlLeft());
+document.getElementById("controls-right").addEventListener("click", () => handleControlRight());
+document.getElementById("controls-up").addEventListener("click", () => handleControlUp());
+document.getElementById("controls-down").addEventListener("click", () => handleControlDown());
+
 
 function init() {
 
